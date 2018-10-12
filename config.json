@@ -1,0 +1,44 @@
+{
+	"bridge":{
+		"name":"RBE Homebridge",
+		"username":"B8:27:EB:80:61:72",
+		"port":51826,
+		"pin":"517-19-026"
+	},
+	"platforms":[{
+		"platform":"cmdSwitch2",
+		"name":"CMD Switch",
+		"switches":[{
+			"name":"All",
+			"on_cmd":"python /home/pi/Documents/serial_writeAll.py",
+			"off_cmd":"python /home/pi/Documents/serial_writeAllOff.py",
+			"state_cmd":"python /home/pi/Documents/serial_checkAll.py | grep '1'",
+			"polling":true,
+			"interval":0.5
+		},
+		{
+			"name":"Blue",
+                        "on_cmd":"python /home/pi/Documents/serial_writeBlue.py",
+                        "off_cmd":"python /home/pi/Documents/serial_writeBlueOff.py",
+                        "state_cmd":"python /home/pi/Documents/serial_checkBlue.py | grep '3'",
+                        "polling":true,
+                        "interval":0.5
+		},
+		{
+			"name":"Green",
+                        "on_cmd":"python /home/pi/Documents/serial_writeGreen.py",
+                        "off_cmd":"python /home/pi/Documents/serial_writeGreenOff.py",
+                        "state_cmd":"python /home/pi/Documents/serial_checkGreen.py | grep '5'",
+                        "polling":true,
+                        "interval":0.5
+		},
+		{
+			"name":"Yellow",
+                        "on_cmd":"python /home/pi/Documents/serial_writeYellow.py",
+                        "off_cmd":"python /home/pi/Documents/serial_writeYellowOff.py",
+                        "state_cmd":"python /home/pi/Documents/serial_checkYellow.py | grep '7'",
+                        "polling":true,
+                        "interval":0.5
+		}]
+	}]
+}
